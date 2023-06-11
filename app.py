@@ -125,3 +125,4 @@ def delete_post(post_id):
     db.session.commit()
     
     flash(f'{id.title} has been deleted.')
+    return redirect(f'/users/{id.user_id}')

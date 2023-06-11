@@ -27,6 +27,8 @@ class User(db.Model):
     
     image_url = db.Column(db.String, nullable=False, default=default_url)
     
+    posts = db.relationship("Post", backref="user")
+    
     @property
     def full_name(self):
         # Adds first name and last name together 
@@ -43,7 +45,7 @@ class Post(db.Model):
     
     title = db.Column(db.String(30), nullable=False)
     
-    content = db.Column(db.String(30), nullable=False)
+    content = db.Column(db.Text, nullable=False)
     
     created_at = db.Column(db.DateTime,
                            nullable=False,

@@ -10,7 +10,7 @@ app.config['TESTING'] = True
 db.drop_all()
 db.create_all()
 
-class Blogly_Test_Case(TestCase):
+class UserRoutesTestCase(TestCase):
     
     def setUp(self):
         """adds sample user"""
@@ -47,7 +47,7 @@ class Blogly_Test_Case(TestCase):
             html = res.get_data(as_text=True)
             
             self.assertEqual(res.status_code, 200)
-            self.assertIn('<h1>Edit user</h1>', html)
+            self.assertIn('<h1>Edit your profile</h1>', html)
             
     def test_user_page(self):
         with app.test_client() as client:

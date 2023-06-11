@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h1>Edit {{ posts.title }}</h1>
+<h1>Edit {{ post.title }}</h1>
 
 <form method="POST" action="/posts/{{ post.id }}/edit">
     <div class="form-group row">
@@ -23,7 +23,7 @@
   
     <div class="form-group row">
       <div class="ml-auto mr-3">
-        <a href="/users/{{ post.user_id }}" class="btn btn-outline-info">Cancel</a>
+        <a href="/users/{{ post.user_id }}" class="btn btn-outline-warning">Cancel</a>
         <button type="submit" class="btn btn-success">Confirm Edit</button>
       </div>
     </div>
